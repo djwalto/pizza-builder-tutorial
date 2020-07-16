@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import "./Pizza.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Base from "../base/Base";
-import Tomato from "../tomato/Tomato";
-import Mushroom from "../mushroom/Mushroom";
-import Corn from "../corn/Corn";
-import Veggie from "../veggie/Veggie";
-import ButtonGroup from "../buttonGroup/ButtonGroup";
+import React, { Component } from 'react';
+import './Pizza.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Base from '../base/Base';
+import Tomato from '../tomato/Tomato';
+import Mushroom from '../mushroom/Mushroom';
+import Corn from '../corn/Corn';
+import Veggie from '../veggie/Veggie';
+import ButtonGroup from '../buttonGroup/ButtonGroup';
+import CustomChatbot from '../chatbot/CustomChatbot';
 
 class Pizza extends Component {
   constructor(props) {
@@ -15,26 +16,26 @@ class Pizza extends Component {
       tomato: false,
       mushroom: false,
       veggie: false,
-      corn: false
+      corn: false,
     };
   }
 
-  clickEventHandler = ingredient => {
-    if (ingredient === "tomato") {
+  clickEventHandler = (ingredient) => {
+    if (ingredient === 'tomato') {
       this.setState({
-        tomato: !this.state.tomato
+        tomato: !this.state.tomato,
       });
-    } else if (ingredient === "mushroom") {
+    } else if (ingredient === 'mushroom') {
       this.setState({
-        mushroom: !this.state.mushroom
+        mushroom: !this.state.mushroom,
       });
-    } else if (ingredient === "corn") {
+    } else if (ingredient === 'corn') {
       this.setState({
-        corn: !this.state.corn
+        corn: !this.state.corn,
       });
     } else {
       this.setState({
-        veggie: !this.state.veggie
+        veggie: !this.state.veggie,
       });
     }
   };
@@ -58,6 +59,7 @@ class Pizza extends Component {
             </div>
           </div>
           <ButtonGroup eventHandler={this.clickEventHandler} />
+          <CustomChatbot eventHandler={this.clickEventHandler} />
         </div>
       </div>
     );
